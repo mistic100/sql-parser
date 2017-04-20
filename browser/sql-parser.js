@@ -925,7 +925,7 @@ if (typeof module !== 'undefined' && require.main === module) {
         quote = true;
       }
       if (quote) {
-        return "`" + (this.values.join('.')) + "`";
+        return "`" + (this.values.join('`.`')) + "`";
       } else {
         return "" + (this.values.join('.'));
       }

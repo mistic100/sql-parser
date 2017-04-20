@@ -53,7 +53,7 @@ exports.LiteralValue = class LiteralValue
   # TODO: Backtick quotes only supports MySQL, Postgres uses double-quotes
   toString: (quote=true) ->
     if quote
-      "`#{@values.join('.')}`"
+      "`#{@values.join('`.`')}`"
     else
       "#{@values.join('.')}"
 
