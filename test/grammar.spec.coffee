@@ -120,6 +120,13 @@ describe "SQL Grammar", ->
         WHERE ((`a` > 10) AND ((`a` < 30) OR (`b` = 'c')))
       """
 
+    it "parses WHERE with REGEXP clauses", ->
+      parse("SELECT * FROM my_table WHERE a > 10 AND b REGEXP '.*' AND c = 4").toString().should.eql """
+      SELECT *
+        FROM `my_table`
+        WHERE (((`a` > 10) AND (`b` REGEXP '.*')) AND (`c` = 4))
+      """
+
     it "parses WHERE clauses with BETWEEN operator", ->
       parse("SELECT * FROM my_table WHERE a > 10 AND b BETWEEN 4 AND 6 AND c = 4").toString().should.eql """
       SELECT *
