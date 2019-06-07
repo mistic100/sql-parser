@@ -2,7 +2,7 @@ SQL Parser
 ==========
 
 [![NPM version](https://img.shields.io/npm/v/sql-parser-mistic.svg?style=flat-square)](https://www.npmjs.com/package/sql-parser-mistic)
-[![Build Status](https://img.shields.io/travis/mistic100/sql-parser/master.svg?style=flat-square)](https://travis-ci.org/mistic100/sql-parser)
+[![Build Status](https://img.shields.io/travis/mistic100/sql-parser/master.svg?style=flat-square)](https://travis-ci.org/mistic100/sql-parser) [![Greenkeeper badge](https://badges.greenkeeper.io/mistic100/sql-parser.svg)](https://greenkeeper.io/)
 
 SQL Parser is a lexer, grammar and parser for SQL written in JS. Currently it is only capable of parsing fairly basic SELECT queries but full SQL support will hopefully come in time. See the specs for examples of currently supported queries.
 
