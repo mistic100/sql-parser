@@ -23,12 +23,12 @@
     "ast"
   ],
   "devDependencies": {
-    "coffee-script": "1.8.0",
+    "coffee-script": "1.12.7",
     "cross-spawn": "^6.0.5",
-    "jison": "0.4.15",
-    "mocha": "2.0.1",
-    "should": "4.1.0",
-    "uglify-js": "^2.7.4"
+    "jison": "0.4.18",
+    "mocha": "6.1.4",
+    "should": "13.2.3",
+    "uglify-js": "^3.6.0"
   },
   "license": "MIT",
   "homepage": "https://github.com/mistic100/sql-parser",
