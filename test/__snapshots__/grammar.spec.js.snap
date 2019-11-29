@@ -1,0 +1,379 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SQL Grammar Case When parses case when statements 1`] = `
+"SELECT CASE WHEN (\`foo\` = 'a') THEN \`a\` WHEN (\`foo\` = 'b') THEN \`b\` ELSE \`c\` END
+  FROM \`table\`"
+`;
+
+exports[`SQL Grammar Parameters parses query parameters 1`] = `
+"SELECT *
+  FROM \`foo\`
+  WHERE (\`bar\` = $12)"
+`;
+
+exports[`SQL Grammar SELECT Queries parses COUNT(DISTINCT field) 1`] = `
+"SELECT \`a\`, COUNT(DISTINCT \`b\`)
+  FROM \`my_table\`
+  LIMIT 10"
+`;
+
+exports[`SQL Grammar SELECT Queries parses GROUP BY and HAVING clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  GROUP BY \`x\`, \`y\`
+  HAVING (COUNT(\`y\`) > 1)"
+`;
+
+exports[`SQL Grammar SELECT Queries parses GROUP BY clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  GROUP BY \`x\`, \`y\`"
+`;
+
+exports[`SQL Grammar SELECT Queries parses LIMIT clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  LIMIT 10"
+`;
+
+exports[`SQL Grammar SELECT Queries parses LIMIT clauses after ORDER BY 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  ORDER BY \`cat\` DESC
+  LIMIT 10"
+`;
+
+exports[`SQL Grammar SELECT Queries parses LIMIT clauses with OFFSET keyword 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  LIMIT 10
+  OFFSET 30"
+`;
+
+exports[`SQL Grammar SELECT Queries parses LIMIT clauses with comma separated offset 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  LIMIT 10
+  OFFSET 30"
+`;
+
+exports[`SQL Grammar SELECT Queries parses ORDER BY clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  ORDER BY \`x\` DESC"
+`;
+
+exports[`SQL Grammar SELECT Queries parses ORDER BY clauses with OFFSET n ROW 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  ORDER BY \`x\` DESC
+  OFFSET 10 ROWS"
+`;
+
+exports[`SQL Grammar SELECT Queries parses ORDER BY clauses with OFFSET n ROW FETCH FIRST n ONLY 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  ORDER BY \`x\` DESC
+  OFFSET 10 ROWS
+  FETCH NEXT 15 ROWS ONLY"
+`;
+
+exports[`SQL Grammar SELECT Queries parses ORDER BY clauses with OFFSET n ROW FETCH NEXT n ONLY 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  ORDER BY \`x\` DESC
+  OFFSET 10 ROWS
+  FETCH NEXT 15 ROWS ONLY"
+`;
+
+exports[`SQL Grammar SELECT Queries parses ORDER BY clauses with OFFSET n ROWS 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  ORDER BY \`x\` DESC
+  OFFSET 10 ROWS"
+`;
+
+exports[`SQL Grammar SELECT Queries parses SELECTs with FUNCTIONs 1`] = `
+"SELECT \`a\`, COUNT(1, \`b\`)
+  FROM \`my_table\`
+  LIMIT 10"
+`;
+
+exports[`SQL Grammar SELECT Queries parses SELECTs with FUNCTIONs without arguments 1`] = `
+"SELECT X(Y(Z()))
+  FROM \`X\`"
+`;
+
+exports[`SQL Grammar SELECT Queries parses UDFs 1`] = `
+"SELECT LENGTH(\`a\`)
+  FROM \`my_table\`"
+`;
+
+exports[`SQL Grammar SELECT Queries parses UNION ALL 1`] = `
+"SELECT *
+  FROM \`a\`
+UNION ALL
+SELECT *
+  FROM \`b\`"
+`;
+
+exports[`SQL Grammar SELECT Queries parses UNIONs 1`] = `
+"SELECT *
+  FROM \`a\`
+UNION
+SELECT *
+  FROM \`b\`
+UNION
+SELECT *
+  FROM \`c\`"
+`;
+
+exports[`SQL Grammar SELECT Queries parses WHERE clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE ((\`x\` > 1) AND (\`y\` = 'foo'))"
+`;
+
+exports[`SQL Grammar SELECT Queries parses WHERE clauses with BETWEEN operator 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE (((\`a\` > 10) AND (\`b\` BETWEEN 4 AND 6)) AND (\`c\` = 4))"
+`;
+
+exports[`SQL Grammar SELECT Queries parses WHERE with GROUP BY and ORDER BY clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE (\`x\` > 1)
+  GROUP BY \`x\`, \`y\`
+  ORDER BY COUNT(\`y\`) ASC"
+`;
+
+exports[`SQL Grammar SELECT Queries parses WHERE with GROUP BY clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE (\`x\` > 1)
+  GROUP BY \`x\`, \`y\`"
+`;
+
+exports[`SQL Grammar SELECT Queries parses WHERE with ILIKE and NOT ILIKE clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE ((\`foo\` ILIKE '%a') AND (\`bar\` NOT ILIKE 'b%'))"
+`;
+
+exports[`SQL Grammar SELECT Queries parses WHERE with LIKE and NOT LIKE clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE ((\`foo\` LIKE '%a') AND (\`bar\` NOT LIKE 'b%'))"
+`;
+
+exports[`SQL Grammar SELECT Queries parses WHERE with NOT REGEXP clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE (((\`a\` > 10) AND (\`b\` NOT REGEXP '.*')) AND (\`c\` = 4))"
+`;
+
+exports[`SQL Grammar SELECT Queries parses WHERE with ORDER BY clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE (\`x\` > 1)
+  ORDER BY \`y\` ASC"
+`;
+
+exports[`SQL Grammar SELECT Queries parses WHERE with ORDER BY clauses with direction 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE (\`x\` > 1)
+  ORDER BY \`y\` ASC"
+`;
+
+exports[`SQL Grammar SELECT Queries parses WHERE with REGEXP clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE (((\`a\` > 10) AND (\`b\` REGEXP '.*')) AND (\`c\` = 4))"
+`;
+
+exports[`SQL Grammar SELECT Queries parses WHERE with multiple ORDER BY clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE (\`x\` > 1)
+  ORDER BY \`x\` ASC, \`y\` DESC"
+`;
+
+exports[`SQL Grammar SELECT Queries parses WHERE with negative numbers and operaions 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE (\`foo\` < (-5 - 4))"
+`;
+
+exports[`SQL Grammar SELECT Queries parses complex WHERE clauses 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE ((\`a\` > 10) AND ((\`a\` < 30) OR (\`b\` = 'c')))"
+`;
+
+exports[`SQL Grammar SELECT Queries parses expressions in place of fields 1`] = `
+"SELECT (\`f\` + (LENGTH(\`f\`) / 3)) AS \`f1\`
+  FROM \`my_table\`"
+`;
+
+exports[`SQL Grammar SELECT Queries parses multiple joins 1`] = `
+"SELECT *
+  FROM \`a\`
+  JOIN \`b\`
+    ON (\`a\`.\`id\` = \`b\`.\`id\`)
+  JOIN \`c\`
+    ON (\`a\`.\`id\` = \`c\`.\`id\`)"
+`;
+
+exports[`SQL Grammar SELECT Queries parses named sub selects 1`] = `
+"SELECT *
+  FROM (
+    SELECT *
+      FROM \`my_table\`
+  ) \`t\`"
+`;
+
+exports[`SQL Grammar SELECT Queries parses right outer joins 1`] = `
+"SELECT *
+  FROM \`a\`
+  RIGHT OUTER JOIN \`b\`
+    ON (\`a\`.\`id\` = \`b\`.\`id\`)"
+`;
+
+exports[`SQL Grammar SELECT Queries parses single joins 1`] = `
+"SELECT *
+  FROM \`a\`
+  JOIN \`b\`
+    ON (\`a\`.\`id\` = \`b\`.\`id\`)"
+`;
+
+exports[`SQL Grammar SELECT Queries parses sub selects 1`] = `
+"SELECT *
+  FROM (
+    SELECT *
+      FROM \`my_table\`
+  )"
+`;
+
+exports[`SQL Grammar SELECT Queries supports IS and IS NOT 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE ((\`a\` IS NULL) AND (\`b\` IS NOT NULL))"
+`;
+
+exports[`SQL Grammar SELECT Queries supports booleans 1`] = `
+"SELECT NULL
+  FROM \`my_table\`
+  WHERE (\`a\` = TRUE)"
+`;
+
+exports[`SQL Grammar SELECT Queries supports nested expressions 1`] = `
+"SELECT *
+  FROM \`my_table\`
+  WHERE MOD((LENGTH(\`a\`) + LENGTH(\`b\`)), \`c\`)"
+`;
+
+exports[`SQL Grammar SELECT Queries supports nested fields using dot syntax 1`] = `
+"SELECT \`a\`.\`b\`.\`c\`
+  FROM \`my_table\`
+  WHERE (\`a\`.\`b\` > 2)"
+`;
+
+exports[`SQL Grammar SELECT Queries supports time window extensions 1`] = `
+"SELECT *
+  FROM \`my_table\`.win:length(123)"
+`;
+
+exports[`SQL Grammar STARS parses stars as multiplication 1`] = `
+"SELECT *
+  FROM \`foo\`
+  WHERE (\`a\` = (1 * 2))"
+`;
+
+exports[`SQL Grammar aliases parses aliased table names 1`] = `
+"SELECT *
+  FROM \`a\` AS \`b\`"
+`;
+
+exports[`SQL Grammar aliases parses aliased table names with as 1`] = `
+"SELECT *
+  FROM \`a\` AS \`b\`"
+`;
+
+exports[`SQL Grammar functions parses function with complex arguments 1`] = `
+"SELECT *
+  FROM \`foo\`
+  WHERE (\`bar\` < DATE_SUB(NOW(), INTERVAL 14 DAYS))"
+`;
+
+exports[`SQL Grammar string quoting allows nesting different quote styles 1`] = `
+"SELECT *
+  FROM \`a\`
+  WHERE (\`foo\` = \\"I'm\\")"
+`;
+
+exports[`SQL Grammar string quoting allows using double quotes 1`] = `
+"SELECT *
+  FROM \`a\`
+  WHERE (\`foo\` = \\"a\\")"
+`;
+
+exports[`SQL Grammar string quoting allows using two single quotes 1`] = `
+"SELECT *
+  FROM \`a\`
+  WHERE (\`foo\` = 'I''m')"
+`;
+
+exports[`SQL Grammar string quoting doesn't choke on escaped quotes 1`] = `
+"SELECT *
+  FROM \`a\`
+  WHERE (\`foo\` = 'I\\\\'m')"
+`;
+
+exports[`SQL Grammar string quoting parses single quote 1`] = `
+"SELECT *
+  FROM \`a\`
+  WHERE (\`foo\` = '''')"
+`;
+
+exports[`SQL Grammar subselect clauses parses a NOT IN clause containing a query 1`] = `
+"SELECT *
+  FROM \`a\`
+  WHERE (\`x\` NOT IN (
+    SELECT \`foo\`
+      FROM \`bar\`
+  ))"
+`;
+
+exports[`SQL Grammar subselect clauses parses a subselect field 1`] = `
+"SELECT (
+  SELECT \`x\`
+    FROM \`y\`
+)
+  FROM \`a\`"
+`;
+
+exports[`SQL Grammar subselect clauses parses an EXISTS clause containing a query 1`] = `
+"SELECT *
+  FROM \`a\`
+  WHERE (EXISTS (
+    SELECT \`foo\`
+      FROM \`bar\`
+  ))"
+`;
+
+exports[`SQL Grammar subselect clauses parses an IN clause containing a list 1`] = `
+"SELECT *
+  FROM \`a\`
+  WHERE (\`x\` IN (1, 2, 3))"
+`;
+
+exports[`SQL Grammar subselect clauses parses an IN clause containing a query 1`] = `
+"SELECT *
+  FROM \`a\`
+  WHERE (\`x\` IN (
+    SELECT \`foo\`
+      FROM \`bar\`
+  ))"
+`;
